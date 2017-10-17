@@ -1,0 +1,19 @@
+{
+  "require": {
+    "codingbean/macaw": "dev-master",
+    "illuminate/database": "*",
+    "filp/whoops": "*",
+    "nette/mail": "*",
+    "predis/predis": "*",
+    "duncan3dc/blade": "^3.4",
+    "xiaoler/blade": "^5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Frame\\": "services/"
+    },
+    "classmap": [
+    ]
+  }
+}
