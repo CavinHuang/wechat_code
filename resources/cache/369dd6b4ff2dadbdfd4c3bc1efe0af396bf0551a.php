@@ -30,27 +30,27 @@
             </tr>
             <tr>
                 <td>服务器类型</td>
-                <td>{{php_uname('s')}}</td>
+                <td><?php echo e(php_uname('s')); ?></td>
             </tr>
             <tr>
                 <td>PHP版本</td>
-                <td>{{PHP_VERSION}}</td>
+                <td><?php echo e(PHP_VERSION); ?></td>
             </tr>
             <tr>
                 <td>Zend版本</td>
-                <td>{{Zend_Version()}}</td>
+                <td><?php echo e(Zend_Version()); ?></td>
             </tr>
             <tr>
                 <td>服务器解译引擎</td>
-                <td>{{$_SERVER['SERVER_SOFTWARE']}}</td>
+                <td><?php echo e($_SERVER['SERVER_SOFTWARE']); ?></td>
             </tr>
             <tr>
                 <td>服务器语言</td>
-                <td>{{$_SERVER['HTTP_ACCEPT_LANGUAGE']}}</td>
+                <td><?php echo e($_SERVER['HTTP_ACCEPT_LANGUAGE']); ?></td>
             </tr>
             <tr>
                 <td>服务器Web端口</td>
-                <td>{{$_SERVER['SERVER_PORT']}}</td>
+                <td><?php echo e($_SERVER['SERVER_PORT']); ?></td>
             </tr>
             </tbody>
         </table>

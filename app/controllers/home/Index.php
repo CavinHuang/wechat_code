@@ -8,11 +8,15 @@
  */
 namespace App\controllers\home;
 
+use App\models\Site;
+
 class Index extends HomeBase {
   
   public function index(){
     
-    return $this->view('home.index')->render();
+    $site = Site::find(1);
+    
+    return $this->view('home.index', ['site'=>$site])->render();
   }
 
 

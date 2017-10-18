@@ -9,10 +9,15 @@ use NoahBuscher\Macaw\Macaw as route;
 route ::get('/admin', 'admin\Index@index');
 route ::get('/admin/main', 'admin\Index@main');
 route::get('/admin/site', 'admin\Site@index');
+route::post('/admin/site/dopost', 'admin\Site@dopost');
 route::get('/admin/user', 'admin\User@index');
-route::get('/admin/user/add', 'admin\User@add');
+route::get('admin/user/add?id=$id', 'admin\User@add');
+route::post('/admin/user/dopost', 'admin\User@dopost');
 
+route::post('/admin/upload', 'HomeController@upload');
 
+route::get('/login', 'admin\Login@login');
+route::post('/dologin', 'admin\Login@dologin');
 
 route::get('', 'home\Index@index');
 

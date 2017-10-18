@@ -16,43 +16,43 @@
     <div class="layui-form-item">
         <label class="layui-form-label">网站标题</label>
         <div class="layui-input-block">
-            <input type="text" class="layui-input siteTitle" name="title" lay-verify="required" value="{{$site->title or ''}}" placeholder="请输入网站名称">
+            <input type="text" class="layui-input siteTitle" name="title" lay-verify="required" value="<?php echo e(isset($site->title) ? $site->title : ''); ?>" placeholder="请输入网站名称">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">网站关键词</label>
         <div class="layui-input-block">
-            <input type="tel" class="layui-input siteKeywords" name="keywords" lay-verify="" value="{{$site->keywords or ''}}" placeholder="网站关键词">
+            <input type="tel" class="layui-input siteKeywords" name="keywords" lay-verify="" value="<?php echo e(isset($site->keywords) ? $site->keywords : ''); ?>" placeholder="网站关键词">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">网站描述</label>
         <div class="layui-input-block">
-            <textarea placeholder="请输入网站描述" class="layui-textarea siteDesc" name="description">{{$site->description or ''}}</textarea>
+            <textarea placeholder="请输入网站描述" class="layui-textarea siteDesc" name="description"><?php echo e(isset($site->description) ? $site->description : ''); ?></textarea>
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">站长邮箱</label>
         <div class="layui-input-block">
-            <input type="text" class="layui-input siteEmail" name="email" lay-verify="email" value="{{$site->email or ''}}" placeholder="请输入网站地址">
+            <input type="text" class="layui-input siteEmail" name="email" lay-verify="email" value="<?php echo e(isset($site->email) ? $site->email : ''); ?>" placeholder="请输入网站地址">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">统计代码</label>
         <div class="layui-input-block">
-            <textarea placeholder="请输入统计代码" class="layui-textarea siteTj" name="tj">{{$site->tj}}</textarea>
+            <textarea placeholder="请输入统计代码" class="layui-textarea siteTj" name="tj"><?php echo e($site->tj); ?></textarea>
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">网站底部说明</label>
         <div class="layui-input-block">
-            <textarea placeholder="请输入网站底部说明" class="layui-textarea siteFooter" name="footer_note">{{$site->footer_note or ''}}</textarea>
+            <textarea placeholder="请输入网站底部说明" class="layui-textarea siteFooter" name="footer_note"><?php echo e(isset($site->footer_note) ? $site->footer_note : ''); ?></textarea>
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">网站首页内容</label>
         <div class="layui-input-block">
-            <textarea placeholder="请输入站点描述" class="layui-textarea siteIndex" name="index_content" id="links_content">{{$site->index_content or ''}}</textarea>
+            <textarea placeholder="请输入站点描述" class="layui-textarea siteIndex" name="index_content" id="links_content"><?php echo e(isset($site->index_content) ? $site->index_content : ''); ?></textarea>
         </div>
     </div>
     <div class="layui-form-item">

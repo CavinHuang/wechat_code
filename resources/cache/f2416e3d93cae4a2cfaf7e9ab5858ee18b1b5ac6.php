@@ -45,7 +45,7 @@
         </colgroup>
         <thead>
         <tr>
-            {{--<th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose" id="allChoose"></th>--}}
+            
             <th width="180">登录名</th>
             <th>头像</th>
             <th>会员状态</th>
@@ -54,19 +54,19 @@
         </tr>
         </thead>
         <tbody class="users_content">
-        @foreach($list as $v)
+        <?php $__currentLoopData = $list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
-                {{--<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>--}}
-                <td>{{$v->username}}</td>
-                <td align="center"><img src="{{$v->user_img}}" alt="" style="width:50px;height:50px;margin: 6px;"></td>
-                <td>@if($v->status == 1)正常@else 锁定 @endif</td>
-                <td>{{$v->createtime}}</td>
+                
+                <td><?php echo e($v->username); ?></td>
+                <td align="center"><img src="<?php echo e($v->user_img); ?>" alt="" style="width:50px;height:50px;margin: 6px;"></td>
+                <td><?php if($v->status == 1): ?>正常<?php else: ?> 锁定 <?php endif; ?></td>
+                <td><?php echo e($v->createtime); ?></td>
                 <td>
-                   <a class="layui-btn layui-btn-mini users_edit" data-id="{{$v->id}}"><i class="iconfont icon-edit"></i> 编辑</a>
+                   <a class="layui-btn layui-btn-mini users_edit" data-id="<?php echo e($v->id); ?>"><i class="iconfont icon-edit"></i> 编辑</a>
                     <a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="'+data[i].usersId+'"><i class="layui-icon">&#xe640;</i> 删除</a>
                 </td>
             </tr>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
     </table>
 </div>

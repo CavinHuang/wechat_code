@@ -2,9 +2,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-    <title>{{$site->title}}</title>
-    <meta name="keywords" content="{{$site->keywords}}">
-    <meta name="description" content="{{$site->description}}">
+    <title><?php echo e($site->title); ?></title>
+    <meta name="keywords" content="<?php echo e($site->keywords); ?>">
+    <meta name="description" content="<?php echo e($site->description); ?>">
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -37,9 +37,11 @@
 
 
 <div class="content" style=" ">
-    {!! $site->index_content !!}
+    <?php echo $site->index_content; ?>
+
     <div class="footer">
-        {{$site->footer_note}}{{$site->tj}}
+        <?php echo e($site->footer_note); ?><?php echo e($site->tj); ?>
+
     </div>
 </div>
 

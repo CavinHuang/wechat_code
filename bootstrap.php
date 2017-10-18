@@ -1,8 +1,12 @@
 <?php
 use Illuminate\Database\Capsule\Manager as Capsule;
+date_default_timezone_set("PRC");
+session_start();
 
 // 定义 BASE_PATH
 define('BASE_PATH', __DIR__);
+
+require BASE_DIR .'/services/Function.php';
 
 // Autoload 自动载入
 require BASE_PATH.'/vendor/autoload.php';

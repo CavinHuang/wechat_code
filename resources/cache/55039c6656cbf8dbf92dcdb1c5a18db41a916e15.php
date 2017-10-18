@@ -22,27 +22,27 @@
     <div class="layui-form-item">
         <label class="layui-form-label">登录名</label>
         <div class="layui-input-block">
-            <input type="text" class="layui-input userName" name="username" value="{{$user->username or ''}}" lay-verify="required" placeholder="请输入登录名">
+            <input type="text" class="layui-input userName" name="username" value="<?php echo e(isset($user->username) ? $user->username : ''); ?>" lay-verify="required" placeholder="请输入登录名">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">密码</label>
         <div class="layui-input-block">
-            <input type="password" class="layui-input userName" name="password" @if(!isset($user->password))lay-verify="required"@endif  placeholder="请输入密码">
+            <input type="password" class="layui-input userName" name="password" <?php if(!isset($user->password)): ?>lay-verify="required"<?php endif; ?>  placeholder="请输入密码">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">确认密码</label>
         <div class="layui-input-block">
-            <input type="password" class="layui-input userName" name="confirm_password" @if(!isset($user->password))lay-verify="required" @endif  placeholder="请确认密码">
+            <input type="password" class="layui-input userName" name="confirm_password" <?php if(!isset($user->password)): ?>lay-verify="required" <?php endif; ?>  placeholder="请确认密码">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">会员状态</label>
         <div class="layui-input-block">
             <select name="status" class="status" name="status" lay-filter="userStatus">
-                <option value="1" @if(isset($user->status) && $user->status == 1)selected @endif>正常使用</option>
-                <option value="0" @if(isset($user->status) && $user->status == 0)selected @endif>限制用户</option>
+                <option value="1" <?php if(isset($user->status) && $user->status == 1): ?>selected <?php endif; ?>>正常使用</option>
+                <option value="0" <?php if(isset($user->status) && $user->status == 0): ?>selected <?php endif; ?>>限制用户</option>
             </select>
         </div>
     </div>
@@ -52,15 +52,15 @@
             <button type="button" class="layui-btn" id="test1">
                 <i class="layui-icon"></i>上传图片
             </button>
-            <img src="{{$user->user_img or ''}}" alt="" id="userImgShow" style="width:140px;height:140px"/>
-            <input type="hidden" value="{{$user->user_img or ''}}" name="user_img" id="userImg"/>
+            <img src="<?php echo e(isset($user->user_img) ? $user->user_img : ''); ?>" alt="" id="userImgShow" style="width:140px;height:140px"/>
+            <input type="hidden" value="<?php echo e(isset($user->user_img) ? $user->user_img : ''); ?>" name="user_img" id="userImg"/>
         </div>
     </div>
     <div class="layui-form-item">
         <div class="layui-input-block">
-            @if(isset($user->id))
-                <input type="hidden" value="{{$user->id}}" name="id" />
-            @endif
+            <?php if(isset($user->id)): ?>
+                <input type="hidden" value="<?php echo e($user->id); ?>" name="id" />
+            <?php endif; ?>
             <button class="layui-btn" lay-submit="" lay-filter="addUser">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>

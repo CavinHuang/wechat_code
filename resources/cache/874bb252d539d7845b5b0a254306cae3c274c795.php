@@ -63,9 +63,7 @@
             </div>
             <!-- 顶部右侧菜单 -->
             <ul class="layui-nav top_menu">
-                {{--<li class="layui-nav-item showNotice" id="showNotice" pc>
-                    <a href="javascript:;"><i class="iconfont icon-gonggao"></i><cite>系统公告</cite></a>
-                </li>--}}
+                
                 <li class="layui-nav-item" mobile>
                     <a href="javascript:;" class="mobileAddTab" data-url="page/user/changePwd.html"><i
                                 class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>设置</cite></a>
@@ -73,16 +71,14 @@
                 <li class="layui-nav-item" mobile>
                     <a href="page/login/login.html" class="signOut"><i class="iconfont icon-loginout"></i> 退出</a>
                 </li>
-                {{--<li class="layui-nav-item lockcms" pc>
-                    <a href="javascript:;"><i class="iconfont icon-lock1"></i><cite>锁屏</cite></a>
-                </li>--}}
+                
                 <li class="layui-nav-item" pc>
                     <a href="javascript:;">
-                        <img src="@if(session('admin_info')['user_img'] == '')/static/admin/images/face.jpg @else {{session('admin_info')['user_img']}}@endif" class="layui-circle" width="35" height="35">
-                        <cite>{{session('admin_info')['username']}}</cite>
+                        <img src="<?php if(session('admin_info')['user_img'] == ''): ?>/static/admin/images/face.jpg <?php else: ?> <?php echo e(session('admin_info')['user_img']); ?><?php endif; ?>" class="layui-circle" width="35" height="35">
+                        <cite><?php echo e(session('admin_info')['username']); ?></cite>
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" data-url="/admin/user/add?id={{session('admin_info')['id']}}"><i class="iconfont icon-zhanghu"
+                        <dd><a href="javascript:;" data-url="/admin/user/add?id=<?php echo e(session('admin_info')['id']); ?>"><i class="iconfont icon-zhanghu"
                                                                                          data-icon="icon-zhanghu"></i><cite>个人资料</cite></a>
                         </dd>
                         <dd><a href="javascript:;" class="changeSkin"><i
@@ -97,8 +93,8 @@
     <!-- 左侧导航 -->
     <div class="layui-side layui-bg-black">
         <div class="user-photo">
-            <a class="img" title="我的头像"><img src="@if(session('admin_info')['user_img'] == '')/static/admin/images/face.jpg @else {{session('admin_info')['user_img']}}@endif"></a>
-            <p>你好！<span class="userName">{{session('admin_info')['username']}}</span>, 欢迎登录</p>
+            <a class="img" title="我的头像"><img src="<?php if(session('admin_info')['user_img'] == ''): ?>/static/admin/images/face.jpg <?php else: ?> <?php echo e(session('admin_info')['user_img']); ?><?php endif; ?>"></a>
+            <p>你好！<span class="userName"><?php echo e(session('admin_info')['username']); ?></span>, 欢迎登录</p>
         </div>
         <div class="navBar layui-side-scroll" style="height: 220px;">
             <ul class="layui-nav layui-nav-tree">
@@ -139,7 +135,7 @@
     </div>
     <!-- 底部 -->
     <div class="layui-footer footer">
-        <p>copyright @2017 管理系统
+        <p>copyright @2017  管理系统
         </p>
     </div>
 </div>
